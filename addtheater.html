@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Theater</title>
+    
+    <link rel="stylesheet" href="css/adminstyle.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="adminheader"></div>
+<br><br><br><br>
+<div class="thContainer">
+    <table align="center" cellpadding="10px" cellspacing="10px">
+       <form id="thForm" onsubmit="settheater()" action="theaterlist.html">
+        <h1 style="text-align: center;">Add Theater</h1>
+        <br>
+        <tr>
+         <td><label>Name : </label></td>
+         <td><input type="text" placeholder="Enter Theater" name="uname" id="thname" required></td>
+         <td></td>
+        </tr>
+        <tr>
+            <td><label>City : </label></td>
+            <td><input type="" placeholder="Enter City" name="uemail" id="thcity" required></td>
+           </tr>
+        <tr>
+            <td><label>No. of Screen : </label></td>
+            <td><input type="number" id="thtype"></td>
+
+        </tr>
+        <tr>
+            <td><label>Seat Capacity : </label></td>
+            <td><input type="number" name="upass" id="thsc" ></td>
+           
+        </tr>
+        </tr>
+        <tr>
+            <td><label>Address : </label></td>
+            <td><input type="textarea" placeholder="Enter Theater Address" name="upass" id="thadd" ></td>
+           
+        </tr><tr>
+            <td><label>Image : </label></td>
+            <td><input type="file" name="upass" id="thimg" ></td>
+           
+        </tr>
+
+        <tr>
+            
+            <td><input type="submit" class="regbtn" value="Save"></td>
+            <td><input type="reset" class="regbtn" value="Clear"></td>
+            
+        </tr>
+
+
+       </form>
+    </table>
+    </div>
+
+    
+
+
+
+
+
+
+<!-- footer-66 -->
+<footer class="w3l-footer">
+    <section class="footer-inner-main">
+        <div class="footer-hny-grids py-5">
+            <div class="container py-lg-4">
+                <div class="text-txt">
+                    <div class="right-side">
+                        <div class="row footer-links">
+
+
+                            <div class="col-md-3 col-sm-6 sub-two-right mt-5">
+                                <h6>Movies</h6>
+                                <ul>
+                                    <li><a href="#">Movies</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="#">English Movies</a></li>
+                                    <li><a href="#">Tailor</a></li>
+                                    <li><a href="#">Upcoming Movies</a></li>
+                                    <li><a href="Contact_Us.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="below-section">
+            <div class="container">
+                <div class="copyright-footer">
+                    <div class="columns text-lg-left">
+                        <p>&copy; 2021 MoviesAdda. All rights reserved</p>
+                   </div>
+
+                    <ul class="social text-lg-right">
+                        <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                        </li>
+                        <li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+                        </li>
+                        <li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                        </li>
+                        <li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- move top -->
+        <button onclick="topFunction()" id="movetop" title="Go to top">
+            <span class="fa fa-arrow-up" aria-hidden="true"></span>
+        </button>
+<script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("movetop").style.display = "block";
+                } else {
+                    document.getElementById("movetop").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+</script>
+        <!-- /move top -->
+
+    </section>
+</footer>
+
+<script>
+    $(function(){
+$("#adminheader").load("adminheader.html");
+ }); 
+</script>
+<script src="js/adminfunc.js"></script>
+</body>
+</html>

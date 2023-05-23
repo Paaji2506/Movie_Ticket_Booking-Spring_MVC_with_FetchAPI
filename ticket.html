@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="css/style-starter.css">
+<link rel="stylesheet" href="css/adminstyle.css">
+	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
+		rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+</head>
+
+<header id="site-header" class="w3l-header fixed-top">
+	<!--/nav-->
+	<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+		<div class="container">
+			<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
+						aria-hidden="true"></span>
+					MoviesAdda</a></h1>
+			<!-- if logo is image enable this   
+					<a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+					</a> -->
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<!-- <span class="navbar-toggler-icon"></span> -->
+				<span class="fa icon-expand fa-bars"></span>
+				<span class="fa icon-close fa-times"></span>
+			</button>
+
+
+				</div>
+				<div class="Login_SignUp" id="login"
+					style="font-size: 2rem ; display: inline-block; position: relative;">
+					<!-- <li class="nav-item"> -->
+					<a class="nav-link" ><i class="fa fa-user-circle-o"></i></a>
+					<!-- </li> -->
+				</div>
+			
+			   
+				  </div>
+			</div>
+		</div>
+	</nav>
+</header>
+     
+
+	 <br><br><br><br>
+
+
+	 <div class="thContainer">
+		<table align="center" cellpadding="10px" cellspacing="10px">
+		   <form id="ticketForm" onsubmit="bookticket()" action="payment.html">
+			<h1 style="text-align: center;">Add Details</h1>
+			<br>
+			<tr>
+			 <td><label>Date: </label></td>
+			 <td><input type="date" name="uname" id="tcdate" required></td>
+			</tr>
+			<tr>
+				<td><label>Theater : </label></td>
+				<td><select id="tcth" onclick="disth()" style="width: 200px; height: 35px;">
+					  <option value="none" selected disabled hidden>Select a Theater</option>
+					<option>Theater</option>
+				 </select>
+				
+			</tr>
+
+			<tr>
+				<td><label>Seat type : </label></td>
+				<td><select id="tctype" style="width: 200px;height: 35px;">
+					<option value="none" selected disabled hidden>Select Seat Type</option>
+					<option value="Second">Second -  30</option>
+					<option value="Dress Circle">Dress Circle - 60</option>
+					<option value="Balcony">Balcony - 100</option>
+					<option value="Box">Box - 120</option>
+				 </select>
+				
+			</tr>
+
+			 <tr>
+				<td><label>Seats : </label></td>
+				<td><input type="number" placeholder="Enter Seats"  id="tcseat" required></td>
+			   </tr>
+			<tr>
+				
+				<td><input type="submit" class="regbtn" value="Buy"></td>
+				<td><input type="reset" class="regbtn" value="Clear"></td>
+				
+			</tr>
+	
+	
+		   </form>
+		</table>
+		</div>
+	</form>
+	
+
+
+
+    <!-- footer-66 -->
+	<footer class="w3l-footer">
+		<section class="footer-inner-main">
+			<div class="footer-hny-grids py-5">
+				<div class="container py-lg-4">
+					<div class="text-txt">
+						<div class="right-side">
+							<div class="row footer-links">
+
+
+								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
+									<h6>Movies</h6>
+									<ul>
+										<li><a href="#">Movies</a></li>
+										<li><a href="#">Videos</a></li>
+										<li><a href="#">English Movies</a></li>
+										<li><a href="#">Tailor</a></li>
+										<li><a href="#">Upcoming Movies</a></li>
+										<li><a href="Contact_Us.html">Contact Us</a></li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="below-section">
+				<div class="container">
+					<div class="copyright-footer">
+						<div class="columns text-lg-left">
+							<p>&copy; 2021 MoviesAdda. All rights reserved</p>
+					   </div>
+
+						<ul class="social text-lg-right">
+							<li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- move top -->
+			<button onclick="topFunction()" id="movetop" title="Go to top">
+				<span class="fa fa-arrow-up" aria-hidden="true"></span>
+			</button>
+<script>
+				// When the user scrolls down 20px from the top of the document, show the button
+				window.onscroll = function () {
+					scrollFunction()
+				};
+
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						document.getElementById("movetop").style.display = "block";
+					} else {
+						document.getElementById("movetop").style.display = "none";
+					}
+				}
+
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+</script>
+			<!-- /move top -->
+
+		</section>
+	</footer>
+
+    <script>
+		$(function(){
+  $("#userheader").load("userheader.html");
+     }); 
+	</script>
+	<script src="js/ticketbooking.js"></script>
+</body>
+</html>
+    

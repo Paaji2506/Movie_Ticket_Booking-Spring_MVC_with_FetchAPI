@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register </title>
+
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style-starter.css">
+	<link rel="stylesheet" type="text/css" href="css/sign-in.css">
+	<link rel="stylesheet" type="text/css" href="css/as-alert-message.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
+		rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+</head>
+<body style="background-image: url('images/banner1.jpg');">
+    
+    <div id="header"></div>
+
+	
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your login details</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			
+	
+
+
+	<div class="regContainer" id="container_signup_signin">
+		<div class="register_container">
+			<form name="signform" action="#" onsubmit="return signUpValidateForm()" action="movies.html">
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span >or use your email for registration</span>
+				<input name="sign-up-name" type="text" placeholder="Name" id="reg_name"  required/>
+				<input name="sign-up-email" type="email" placeholder="Email" id="reg_email" required/>
+				<input name="sign-up-passwd" type="password" placeholder="Password" id="reg_psw" required/>
+				<input name="sign-up-cnfpasswd" type="password" placeholder="Confirm Password" id="reg_cpsw"required/>
+				<input name="sign-up-mobile" type="number" placeholder="Mobile Number" id="reg_mob" required />
+				
+				<button>Sign Up</button>
+			</form>
+		</div>
+
+<script>
+	$(function(){
+$("#header").load("header.html");
+ }); 
+</script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style-starter.css">
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+    <link rel="stylesheet" type="text/css" href="css/progress.css">
+  
+    <link rel="stylesheet" type="text/css" href="css/ticket-booking.css">
+  
+    <!-- ..............For progress-bar............... -->
+    <link rel="stylesheet" type="text/css" href="css/e-ticket.css">
+  
+    <link rel="stylesheet" type="text/css" href="css/payment.css" />
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
+</head>
+<body>
+
+    <header id="site-header" class="w3l-header fixed-top">
+        <!--/nav-->
+        <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+            <div class="container">
+                <h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
+                            aria-hidden="true"></span>
+                        MoviesAdda</a></h1>
+                <!-- if logo is image enable this   
+                        <a class="navbar-brand" href="#index.html">
+                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                        </a> -->
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <span class="fa icon-expand fa-bars"></span>
+                    <span class="fa icon-close fa-times"></span>
+                </button>
+                       
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="userhome.html">Home</a>
+                    </li>
+                    
+                </ul>
+    
+                    </div>
+                    <div class="Login_SignUp" id="login"
+                        style="font-size: 2rem ; display: inline-block; position: relative;">
+                        <!-- <li class="nav-item"> -->
+                        <a class="nav-link" ><i class="fa fa-user-circle-o"></i></a>
+                        <!-- </li> -->
+                    </div>
+                
+                   
+                      </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <br><br><br> <br><br>
+
+
+    <fieldset>
+        <!-- Payment Page -->
+        <div id="payment_div">
+          <div class="payment-row">
+            <div class="col-75">
+              <div class="payment-container">
+                <div class="payment-row">
+                  <div class="col-50">
+                    <h3 id="payment-h3">Payment</h3>
+                    <div class="payment-row payment">
+                      <div class="col-50 payment">
+                        <label for="card" class="method card">
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color: navy"></i>
+                            <i class="fa fa-cc-amex" style="color: blue"></i>
+                            <i class="fa fa-cc-mastercard" style="color: red"></i>
+                            <i class="fa fa-cc-discover" style="color: orange"></i>
+                          </div>
+                          <div class="radio-input">
+                            <input type="radio" id="card" />
+                            Pay RS.200.00 with credit card
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-50 payment">
+                        <label for="paypal" class="method paypal">
+                          <div class="icon-container">
+                            <i class="fa fa-paypal" style="color: navy"></i>
+                          </div>
+                          <div class="radio-input">
+                            <input id="paypal" type="radio" checked>
+                            Pay $30.00 with PayPal
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="payment-row">
+                      <div class="col-50">
+                        <label for="cname">Cardholder's Name</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Firstname Lastname" required />
+                      </div>
+                      <div class="col-50">
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx"
+                          required />
+                      </div>
+                    </div>
+                    <div class="payment-row">
+                      <div class="col-50">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="September" required />
+                      </div>
+                      <div class="col-50">
+                        <div class="payment-row">
+                          <div class="col-50">
+                            <label for="expyear">Exp Year</label>
+                            <input type="text" id="expyear" name="expyear" placeholder="yyyy" required />
+                          </div>
+                          <div class="col-50">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="xxx" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="button" name="next-step" class="next-step pay-btn" value="Confirm Payment" onclick="location.href='e-ticket.html';"/>
+        <input type="button" name="previous-step" class="cancel-pay-btn" value="Cancel Payment"
+          onclick="location.href='userhome.html';" />
+      </fieldset>
+    
+</body>
+</html>
