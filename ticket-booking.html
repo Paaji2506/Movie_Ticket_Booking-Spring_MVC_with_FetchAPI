@@ -10,20 +10,10 @@
 	<meta name="keywords"
 		content="Movie Ticket Booking Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<link href="css2/style.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/seatbooking.css">
+
 	
-	<style>
-		.nxtbtn{
-		position: absolute;
-		top: 550px;
-		text-align: center;
-		padding: 10px;
-		 background-color: black; 
-		 color: white; 
-		 width: 70px;
-		 height: 20px;
-		 border-radius: 10px;
-		}
-	 </style>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.seat-charts.js"></script>
 
@@ -31,7 +21,28 @@
 
 <body style="background-image: url(images/bg4.jpg);">
 
+    <br><br><br><br>
 
+	<div class="movdate">
+	<table cellspacing="10px" cellpadding="15px">
+	<tr>
+   <td><label>Date :</label></td>
+	<td><input type="date" ></td>
+	</tr>
+   <br>
+   <tr>
+   <td><label>Show Timing : </label></td>
+	<td><select>
+		<option value="none" selected disabled hidden>Select Show Timing</option>
+		<option>09:15 AM</option>
+		<option>12:15 PM</option>
+		<option>03:15 PM</option>
+		<option>06:15 PM</option>
+		<option>09:15 PM</option>
+	</select></td>
+	</tr>
+	</table>
+	</div>
 
 <div class="content">
 	<h2>Seat Booking</h2>
@@ -50,7 +61,7 @@
 				</ul>
 				<ul class="book-right">
 					<li>: Commando 3</li>
-					<li>: April 12, 22:00</li>
+					<li>: April 12 22:00</li>
 					<li>: <span id="counter">0</span></li>
 					<li>: <b><i>RS.</i><span id="total">0</span></b></li>
 				</ul>
@@ -143,8 +154,9 @@
 
 
 
-
+    <div>
 	<a  id="nextbtn" class="nxtbtn" href="/payment.html">Next</a>
+    </div>
 
 
 

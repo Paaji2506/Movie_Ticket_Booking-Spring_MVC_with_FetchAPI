@@ -1,0 +1,28 @@
+.nxtbtn{
+    position: absolute;
+    top: 600px;
+    margin-left: 150px;
+    text-align: center;
+    padding: 10px;
+     background-color: black; 
+     color: white; 
+     width: 70px;
+     border-radius: 10px;
+    }
+   
+    .movdate{
+        margin-left: 70px;
+    }
+
+    .movdate label{
+       
+        font-size: 20px;
+    }
+    .movdate input{
+       
+        padding: 5px;
+    }
+    .movdate select{
+       
+        padding : 5px;
+    }
