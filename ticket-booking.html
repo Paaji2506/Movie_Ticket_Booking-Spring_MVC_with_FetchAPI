@@ -27,18 +27,18 @@
 	<table cellspacing="10px" cellpadding="15px">
 	<tr>
    <td><label>Date :</label></td>
-	<td><input type="date" ></td>
+	<td><input type="date" id="movdt" ></td>
 	</tr>
    <br>
    <tr>
    <td><label>Show Timing : </label></td>
-	<td><select>
+	<td><select id="movshow">
 		<option value="none" selected disabled hidden>Select Show Timing</option>
-		<option>09:15 AM</option>
-		<option>12:15 PM</option>
-		<option>03:15 PM</option>
-		<option>06:15 PM</option>
-		<option>09:15 PM</option>
+		<option value="09:15 AM">09:15 AM</option>
+		<option value="12:15 PM">12:15 PM</option>
+		<option value="03:15 PM">03:15 PM</option>
+		<option value="06:15 PM">06:15 PM</option>
+		<option value="09:15 PM">09:15 PM</option>
 	</select></td>
 	</tr>
 	</table>
@@ -54,14 +54,14 @@
 			<div class="booking-details">
 				<ul class="book-left">
 					<li>Movie </li>
-					<li>Time </li>
+					
 					<li>Tickets</li>
 					<li>Total</li>
 					<li>Selected Seats</li>
 				</ul>
 				<ul class="book-right">
 					<li>: Commando 3</li>
-					<li>: April 12 22:00</li>
+					
 					<li>: <span id="counter">0</span></li>
 					<li>: <b><i>RS.</i><span id="total">0</span></b></li>
 				</ul>
@@ -71,14 +71,19 @@
 						
 				<div id="legend"></div>
 			</div>
+			
 
 			<script type="text/javascript">
 				var price = 110; //price
+				var invoice;
+				var quan;
 				$(document).ready(function () {
 					var $cart = $('#selected-seats'), //Sitting Area
 						$counter = $('#counter'), //Votes
 						$total = $('#total'); //Total money
 
+					
+                        
 					var sc = $('#seat-map').seatCharts({
 						map: [ //Seating chart
 							'aaaaaaaaaa',
@@ -113,9 +118,16 @@
 									.data('seatId', this.settings.id)
 									.appendTo($cart);
 
-								$counter.text(sc.find('selected').length + 1);
-								$total.text(recalculateTotal(sc) + price);
+						
 
+								$counter.text(sc.find('selected').length + 1);
+								quan = sc.find('selected').length + 1;
+								sessionStorage.setItem("quan",quan);
+								$total.text(recalculateTotal(sc) + price);
+                                invoice = recalculateTotal(sc) + price;
+								
+							    sessionStorage.setItem("invoice",invoice);
+								
 								return 'selected';
 							} else if (this.status() == 'selected') { //Checked
 								//Update Number
@@ -145,21 +157,22 @@
 					sc.find('selected').each(function () {
 						total += price;
 					});
-
 					return total;
 				}
 			</script>
 		</div>
-	</div>
+	
 
+   </div>
 
-
-    <div>
-	<a  id="nextbtn" class="nxtbtn" href="/payment.html">Next</a>
+    
     </div>
+  
+	<a id="nextbtn" class="nxtbtn" onclick="book(invoice)">Next</a>
+</form>
 
 
-
+<script src="js2/seat_booking.js"></script>
 </body>
 
 </html>

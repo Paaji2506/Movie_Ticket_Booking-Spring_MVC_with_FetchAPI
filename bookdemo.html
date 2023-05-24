@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Movie Ticket Booking Widget Flat Responsive Widget Template :: w3layouts</title>
+	<!-- for-mobile-apps -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords"
+		content="Movie Ticket Booking Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<link href="css2/style.css" rel="stylesheet" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/seatbooking.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery.seat-charts.js"></script>
+
+</head>
+
+<body style="background-image: url(images/bg4.jpg);">
+
+    <div id="userheader"></div>
+    
+    <br><br><br><br>
+    <form onsubmit="book(t)" action="payment.html">
+	<div class="movdate">
+	<table cellspacing="10px" cellpadding="15px">
+	<tr>
+   <td><label>Date :</label></td>
+	<td><input type="date" id="movdt"></td>
+	</tr>
+   <br>
+   <tr>
+   <td><label>Show Timing : </label></td>
+	<td><select>
+		<option value="none" id="movshow">Select Show Timing</option>
+		<option value="09:15 AM">09:15 AM</option>
+		<option value="12:15 PM">12:15 PM</option>
+		<option value="03:15 PM">03:15 PM</option>
+		<option value="06:15 PM">06:15 PM</option>
+		<option value="09:15 PM">09:15 PM</option>
+	</select></td>
+	</tr>
+	</table>
+	</div>
+	
+
+
+	<input type="submit" id="nextbtn" class="nxtbtn" value="Next">
+</form>
+
+<script>
+    $(function(){
+$("#userheader").load("userheader.html");
+ }); 
+</script>
+<script src="js2/seat_booking.js"></script>
+
+</body>
+
+</html>
