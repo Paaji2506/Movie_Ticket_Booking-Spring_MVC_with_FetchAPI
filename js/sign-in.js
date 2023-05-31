@@ -3,56 +3,43 @@ const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container_signup_signin');
 
 
-function message(msg,suc) {
-	document.querySelector(".error").style.display = "block";
-	document.querySelector(".error").innerHTML = msg;
-	if(suc==true){
-	  document.querySelector(".error").style.color = "green";
-	}
-	else{ 
-	document.onclick = () =>{
-	  document.querySelector(".error").style.display = "none";
-	}
-    }
-}
+let signinform = document.getElementById("sign-in-form");
+signinform.addEventListener("submit", (e) => {
+	e.preventDefault();
+	signInValidateForm();
+});
 
 
+let logemail = document.getElementById("log_email");
+let logpsw = document.getElementById("log_psw");
 
-function logIn() {
-	
-	
-  if(signInValidateForm())
-  {
-	   let log_email = document.getElementById("log_email");
-      let log_psw = document.getElementById("log_psw");
-	  
-	  let users = JSON.parse(localStorage.getItem("users"));
-       let status=false;
-		if (log_email.value.match(users.regemail)&& log_psw.value.match(users.regpsw))
-	  {
-		 status=true;
-		sessionStorage.setItem("email", log_email.value);
-		sessionStorage.setItem("password", log_psw.value);
-		sessionStorage.setItem("status", status);
-		if(users.regtype){
-			
-		 message(`Admin Logged in successfully!...`,true);
-		  setTimeout(()=>location.href=("adminhome.html"));
-		  return true;
+async function logIn() {
+
+	let resp = await fetch("http://localhost:9000/getuser/" + logemail.value);
+
+	if (resp.status == 200) {
+		let userstatus="Deactive";
+		let user = await resp.json();
+		console.log(user);
+		if (user.upsw == logpsw.value) {
+			userstatus="Active";
+			localStorage.setItem("userid",user.uid);
+			localStorage.setItem("userstatus",userstatus);
+			sessionStorage.setItem("email", logemail.value);
+			sessionStorage.setItem("fname", user.uname);
+			sessionStorage.setItem("password", logpsw.value);
+			if (user.isAdmin) {
+				alert(`Admin Logged in successfully!...`);
+				setTimeout(() => location.href = ("adminhome.html"));
+			}
+			else {
+				alert(`Hello ${user.uname}!. You've Logged in successfully!...`);
+				setTimeout(() => location.href = ("userhome.html"));
+			}
+		} else {
+			alert("Invalid Email or Password!...");
 		}
-		else{
-		 message(`Hello ${users.regname}!. You've Logged in successfully!...`,true);
-		  
-		  setTimeout(()=>location.href=("userhome.html"));
-		  return true;
-		}
-	  } else {
-		message("Invalid Email or Password!...");
-		return false;
 	}
-}
- else
-  return false;
 }
 
 
@@ -61,35 +48,14 @@ function signInValidateForm() {
 
 	x = document.forms["sign-in-form"]["sign-in-email"].value;
 	if (x == "") {
-		//   alert("'Email' can not be empty!!");
-		asAlertMsg({
-			type: "error",
-			title: "Empty Field",
-			message: "'E-mail' can not be empty!!",
-
-			button: {
-				title: "Close Button",
-				bg: "Cancel Button"
-			}
-		});
-		return false;
+		alert("'Email' can not be empty!!");
 	}
 	x = document.forms["sign-in-form"]["sign-in-passwd"].value;
 	if (x == "") {
-		//   alert("'Password' can not be empty!!");
-		asAlertMsg({
-			type: "error",
-			title: "Empty Field",
-			message: "'Password' can not be empty!!",
-
-			button: {
-				title: "Close Button",
-				bg: "Cancel Button"
-			}
-		});
-		return false;
+		alert("'Password' can not be empty!!");
 	}
-  return true;
+	else
+		logIn();
 }
 
 signUpButton.addEventListener('click', () => {

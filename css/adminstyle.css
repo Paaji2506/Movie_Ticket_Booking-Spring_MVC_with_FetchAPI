@@ -25,16 +25,12 @@ label{
     font-size: 25px;
 
 }
-input[type="submit"]
+.regbtn
 {
     background-color: tomato;
     color:#fff;
 }
-input[type="reset"]
-{
-    background-color: tomato;
-    color:#fff;
-}
+
 input[type="checkbox"]
 {
    display: block;
@@ -50,6 +46,10 @@ table{
     border-radius: 10px 10px;
    
 }
+table th {
+    color: red;
+    
+ }
 
 
 .movie_date button{

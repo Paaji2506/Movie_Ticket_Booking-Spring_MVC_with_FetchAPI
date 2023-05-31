@@ -70,7 +70,7 @@
 
 	<div class="container_signup_signin" id="container_signup_signin">
 		<div class="form-container sign-up-container">
-			<form name="sign-up-form" action="#" onsubmit="return addUser()" action="movies.html">
+			<form id="sign-up-form">
 				<h1>Create Account</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -78,17 +78,17 @@
 					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span >or use your email for registration</span>
-				<input name="sign-up-name" type="text" placeholder="Name" id="reg_name"/>
-				<input name="sign-up-email" type="email" placeholder="Email" id="reg_email" />
-				<input name="sign-up-passwd" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" id="reg_psw"/>
-				<input name="sign-up-cnfpasswd" type="password" placeholder="Confirm Password" id="reg_cpsw">
-				<input name="sign-up-mobile" type="number" placeholder="Mobile Number" id="reg_mob" />
+				<input name="uname" type="text" placeholder="Name" id="uname" required/>
+				<input name="uemail" type="email" placeholder="Email" id="uemail" required />
+				<input name="upsw" type="password"  placeholder="Password" id="upsw" required/>
+				<input name="ucpsw" type="password" placeholder="Confirm Password" id="ucpsw" required>
+				<input name="umobile" type="number" placeholder="Mobile Number" id="umob" required />
 				
-				<button>Sign Up</button>
+				<button type="submit">Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form name="sign-in-form" style="color: var(--theme-title);" onsubmit="return logIn()">
+			<form id="sign-in-form" style="color: var(--theme-title);">
 				<h1>Sign In</h1>
 				<div class="social-container">
 					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
@@ -119,47 +119,10 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/as-alert-message.min.js"></script>
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<!--/theme-change-->
-	<script src="js/theme-change.js"></script>
-	<!-- disable body scroll which navbar is in active -->
-	<script>
-		$(function () {
-			$('.navbar-toggler').click(function () {
-				$('body').toggleClass('noscroll');
-			})
-		});
-	</script>
-	<!-- disable body scroll which navbar is in active -->
-	<!--/MENU-JS-->
-	<script>
-		$(window).on("scroll", function () {
-			var scroll = $(window).scrollTop();
 
-			if (scroll >= 80) {
-				$("#site-header").addClass("nav-fixed");
-			} else {
-				$("#site-header").removeClass("nav-fixed");
-			}
-		});
-
-		//Main navigation Active Class Add Remove
-		$(".navbar-toggler").on("click", function () {
-			$("header").toggleClass("active");
-		});
-		$(document).on("ready", function () {
-			if ($(window).width() > 991) {
-				$("header").removeClass("active");
-			}
-			$(window).on("resize", function () {
-				if ($(window).width() > 991) {
-					$("header").removeClass("active");
-				}
-			});
-		});
-	</script>
-	<script src="js/bootstrap.min.js"></script>
+	
+	
+	
 	
 	<script type="text/javascript" src="js/sign-in.js"></script>
 	<script type="text/javascript" src="js/register.js"></script>

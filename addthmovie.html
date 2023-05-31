@@ -4,16 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theater List</title>
-    <link rel="stylesheet" href="adminstyle.css">
-    <link rel="stylesheet" href="css/style-starter.css">
+    <title>Add Movie</title>
+    
+    <link rel="stylesheet" href="css/adminstyle.css">
 	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
 		rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="thmovview()">
+    <div id="adminheader"></div>
+
+    <br><br><br><br>
+<div class="thContainer">
+   
+    <h1 style="text-align: center;">Add Movies to&nbsp;<span id="thtitle" class="regbtn" style="border-radius: 5px;"></span></h1>
+ <br><br>
+    <div>
+        <select id="theamov"  style="width: 200px; height: 35px; margin: 50px;">
+            <option value="none" selected disabled hidden>Select Movies to Add</option>
+       </select></td>
+       
+       <button class="regbtn" style="width: 80px;" onclick="addthmov()">ADD</button>
+    </div>
+    
+    <table align="center" cellspacing="25px" cellpadding="20px" style=" background-color: black;" id="thmovtable">
+
+        <tr>
+            <th>Movid</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Cast</th>
+            <th>Director</th>
+            <th>Description</th>
+            <th><a>Delete</a></th>
+        </tr>
+        
+
+    </table>
+    </div>
+
+    <br><br><br>
 
 
 <!-- footer-66 -->
@@ -65,32 +98,7 @@
                 </div>
             </div>
         </div>
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            <span class="fa fa-arrow-up" aria-hidden="true"></span>
-        </button>
-<script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-</script>
-        <!-- /move top -->
-
+        
     </section>
 </footer>
 
@@ -99,6 +107,6 @@
 $("#adminheader").load("adminheader.html");
  }); 
 </script>
-    
+<script src="js/adminfunc.js"></script>
 </body>
 </html>

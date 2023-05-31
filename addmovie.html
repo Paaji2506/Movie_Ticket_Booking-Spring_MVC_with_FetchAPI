@@ -19,47 +19,38 @@
     <br><br><br><br>
 <div class="thContainer">
     <table align="center" cellpadding="10px" cellspacing="10px">
-       <form id="movForm" onsubmit="setmovie()" action="movielist.html">
+       <form id="movForm" onsubmit="setmovie()">
         <h1 style="text-align: center;">Add Movie</h1>
         <br>
         <tr>
          <td><label>Name : </label></td>
-         <td><input type="text" placeholder="Enter Movie" name="uname" id="movname" required></td>
+         <td><input type="text" placeholder="Enter Movie" name="movname" id="movname" required></td>
          <td></td>
         </tr>
         <tr>
             <td><label>City : </label></td>
-            <td><input type="text" placeholder="Enter City" name="uemail" id="movcity" required></td>
+            <td><input type="text" placeholder="Enter City" name="movcity" id="movcity" required></td>
            </tr>
         <tr>
                 <td><label>Image : </label></td>
-                <td><input type="file" placeholder="Enter Theater Address" name="upass" id="movimg" ></td>
+                <td><input type="file" placeholder="Enter Theater Address" name="movimg" id="movimg" ></td>
                
         </tr>
-
-        <tr>
-            <td><label>Theater : </label></td>
-            <td><select id="movthea" onclick="disth()" style="width: 200px; height: 35px;">
-                  <option value="none" selected disabled hidden>Select a Theater</option>
-                <option value="Theater">Theater</option>
-             </select></td>
-            
-            </tr>
       
         
         <tr>
             <td><label>Cast</label> : </label></td>
-            <td><input type="textarea"  name="upass" id="movcast" ></td>
+            <td><input type="textarea"  name="movcast" id="movcast" ></td>
            
         </tr>
         <tr>
             <td><label>Director</label> : </label></td>
-            <td><input type="text"  name="upass" id="movdir" ></td>
+            <td><input type="text"  name="movdir" id="movdir" ></td>
            
         </tr>
         <tr>
             <td><label>Description</label> : </label></td>
-            <td><input type="textarea"  name="upass" id="movdes" ></td>
+            <td><input type="textarea"  name="movdes" id="movdes" ></td>
            
         </tr>
         <tr>
@@ -125,32 +116,7 @@
                 </div>
             </div>
         </div>
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            <span class="fa fa-arrow-up" aria-hidden="true"></span>
-        </button>
-<script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-</script>
-        <!-- /move top -->
-
+        
     </section>
 </footer>
 

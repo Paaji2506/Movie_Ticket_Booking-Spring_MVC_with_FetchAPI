@@ -20,22 +20,25 @@ function disth()
 
 
 
-function gentc()
+async function gentc()
 {
-  let movdt = sessionStorage.getItem("movdt");
-  let quan = sessionStorage.getItem("quan");
-  let price = sessionStorage.getItem("invoice");
+ let tcid = localStorage.getItem("tcid");
+ let resp = await fetch("http://localhost:9000/getonebooking/"+tcid);
+if(resp.status=200)
+{
+  let bookdata = await resp.json();
 
 
    let tdnode=document.getElementById("tdnode");
    let datenode = document.createElement("td");
    let seatnode = document.createElement("td");
    let pricenode = document.createElement("td");
-   datenode.append(movdt);
-   seatnode.append(quan);
-   pricenode.append(price);
+   datenode.append(bookdata.tcdate);
+   seatnode.append(bookdata.tcquan);
+   pricenode.append(bookdata.tcprice);
    tdnode.append(datenode);
    tdnode.append(seatnode);
    tdnode.append(pricenode);
    
+}
 }

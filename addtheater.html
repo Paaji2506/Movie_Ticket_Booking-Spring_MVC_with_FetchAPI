@@ -16,36 +16,36 @@
 <br><br><br><br>
 <div class="thContainer">
     <table align="center" cellpadding="10px" cellspacing="10px">
-       <form id="thForm" onsubmit="settheater()" action="theaterlist.html">
+       <form id="thForm">
         <h1 style="text-align: center;">Add Theater</h1>
         <br>
         <tr>
          <td><label>Name : </label></td>
-         <td><input type="text" placeholder="Enter Theater" name="uname" id="thname" required></td>
+         <td><input type="text" placeholder="Enter Theater" name="thname" id="thname" required></td>
          <td></td>
         </tr>
         <tr>
             <td><label>City : </label></td>
-            <td><input type="" placeholder="Enter City" name="uemail" id="thcity" required></td>
+            <td><input type="" placeholder="Enter City" name="thcity" id="thcity" required></td>
            </tr>
         <tr>
             <td><label>No. of Screen : </label></td>
-            <td><input type="number" id="thtype"></td>
+            <td><input type="number" id="thtype" name="thtype"></td>
 
         </tr>
         <tr>
             <td><label>Seat Capacity : </label></td>
-            <td><input type="number" name="upass" id="thsc" ></td>
+            <td><input type="number" name="thsc" id="thsc" ></td>
            
         </tr>
         </tr>
         <tr>
             <td><label>Address : </label></td>
-            <td><input type="textarea" placeholder="Enter Theater Address" name="upass" id="thadd" ></td>
+            <td><input type="textarea" placeholder="Enter Theater Address" name="thadd" id="thadd" ></td>
            
         </tr><tr>
             <td><label>Image : </label></td>
-            <td><input type="file" name="upass" id="thimg" ></td>
+            <td><input type="file" name="thimg" id="thimg" ></td>
            
         </tr>
 
@@ -117,33 +117,7 @@
                 </div>
             </div>
         </div>
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            <span class="fa fa-arrow-up" aria-hidden="true"></span>
-        </button>
-<script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-</script>
-        <!-- /move top -->
-
-    </section>
+        
 </footer>
 
 <script>
