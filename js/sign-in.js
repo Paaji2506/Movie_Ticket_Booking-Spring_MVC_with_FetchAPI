@@ -9,6 +9,16 @@ signinform.addEventListener("submit", (e) => {
 	signInValidateForm();
 });
 
+function message(msg,suc=false) {
+	document.querySelector(".error").style.display = "block";
+	document.querySelector(".error").innerHTML = msg;
+	if(suc==true){
+	  document.querySelector(".error").style.color = "green";
+	}
+	document.onclick = () =>{
+	  document.querySelector(".error").style.display = "none";
+	}
+  }
 
 let logemail = document.getElementById("log_email");
 let logpsw = document.getElementById("log_psw");
@@ -20,24 +30,24 @@ async function logIn() {
 	if (resp.status == 200) {
 		let userstatus="Deactive";
 		let user = await resp.json();
-		console.log(user);
 		if (user.upsw == logpsw.value) {
 			userstatus="Active";
 			localStorage.setItem("userid",user.uid);
 			localStorage.setItem("userstatus",userstatus);
-			sessionStorage.setItem("email", logemail.value);
-			sessionStorage.setItem("fname", user.uname);
-			sessionStorage.setItem("password", logpsw.value);
-			if (user.isAdmin) {
-				alert(`Admin Logged in successfully!...`);
-				setTimeout(() => location.href = ("adminhome.html"));
+			localStorage.setItem("useremail", logemail.value);
+			localStorage.setItem("username", user.uname);
+	        localStorage.setItem("userpswd", logpsw.value);
+			if (user.uemail=="admin@gmail.com") {
+	
+				message(`Hello Admin ! . Logged in successfully!...`,true);
+				setTimeout(() => location.href = ("adminhome.html"),1000);
 			}
 			else {
-				alert(`Hello ${user.uname}!. You've Logged in successfully!...`);
-				setTimeout(() => location.href = ("userhome.html"));
+				message(`Hello ${user.uname}!. You've Logged in successfully!...`,true);
+				setTimeout(() => location.href = ("userhome.html"),1000);
 			}
 		} else {
-			alert("Invalid Email or Password!...");
+			message("Invalid Email or Password!...");
 		}
 	}
 }
@@ -48,11 +58,11 @@ function signInValidateForm() {
 
 	x = document.forms["sign-in-form"]["sign-in-email"].value;
 	if (x == "") {
-		alert("'Email' can not be empty!!");
+		message("'Email' can not be empty!!");
 	}
 	x = document.forms["sign-in-form"]["sign-in-passwd"].value;
 	if (x == "") {
-		alert("'Password' can not be empty!!");
+		message("'Password' can not be empty!!");
 	}
 	else
 		logIn();

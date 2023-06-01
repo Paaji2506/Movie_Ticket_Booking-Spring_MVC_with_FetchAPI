@@ -9,8 +9,18 @@ body {
   
   background-image: url('bg4.jpg');
 }
-
-
+#error {
+    display: none;
+    text-align: center;
+    font-size: 15px;
+	font-weight: bold;
+	padding: 4px;
+    color: red;
+    letter-spacing: 2px;
+	margin-left: 150px;
+	border-radius: 10px;
+    z-index: 1000;
+}
 
 .wish{
 margin-top: 100px;
@@ -69,3 +79,42 @@ table th {
 }
 
 
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 2px;
+    background-color: #f1f1f1;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    text-decoration:none;
+    display: block;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    font-size: 20px;
+
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+ 

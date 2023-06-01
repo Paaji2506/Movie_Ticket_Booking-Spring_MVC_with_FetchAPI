@@ -12,8 +12,13 @@
 	<link href="css2/style.css" rel="stylesheet" type="text/css" media="all" />
 
 	<link rel="stylesheet" href="css/seatbooking.css">
+	<link rel="stylesheet" href="css/style-starter.css">
+	<link rel="stylesheet" href="css/userstyle.css">
 
-	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.seat-charts.js"></script>
 
@@ -21,10 +26,52 @@
 
 <body style="background-image: url(images/bg4.jpg);">
 
+	<header id="site-header" class="w3l-header fixed-top">
+		<!--/nav-->
+		<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+			<div class="container">
+				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
+							aria-hidden="true"></span>
+						MoviesAdda</a></h1>
+				<!-- if logo is image enable this   
+						<a class="navbar-brand" href="#index.html">
+							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+						</a> -->
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<!-- <span class="navbar-toggler-icon"></span> -->
+					<span class="fa icon-expand fa-bars"></span>
+					<span class="fa icon-close fa-times"></span>
+				</button>
+	
+	
+					</div>
+					<div class="dropdown">
+                        <a class="dropbtn"><i class="fa fa-user-circle-o"></i></a>
+                        <div class="dropdown-content">
+                          <a onclick="logout()">Logout</a>
+                        </div>
+                      </div>
+				
+				   
+					  </div>
+				</div>
+			</div>
+		</nav>
+	</header>
+		 
+
     <br><br><br><br>
 
 	<div class="movdate">
 	<table cellspacing="10px" cellpadding="15px">
+	<!--<tr>
+		<label>Theater : </label>
+			<td></td><select id="theat"  style="width: 200px; height: 35px; margin: 50px;">
+				<option value="none" selected disabled hidden>Select Theater</option>
+		   </select>
+		   </tr>-->
 	<tr>
    <td><label>Date :</label></td>
 	<td><input type="date" id="movdt" name="tcdate" ></td>
@@ -43,6 +90,29 @@
 	</tr>
 	</table>
 	</div>
+<!--
+	<button class="regbtn" style="margin-left:100px; margin-top: 20px;" id="btnseat">Select Seats</button></td>
+
+	<div id="Seatdynam" style="position: absolute; left: 600px; top: 150px; display: none;" > 
+	
+	
+<div>
+	<h2>Seat Booking</h2>
+<div>
+	<div>SCREEN</div>	
+	
+
+	<div id="seatchart">
+       <table align="center" cellpadding="10px" id="seattable">
+	        
+		
+	   </table>
+
+	</div>
+	
+			
+</div>
+</div>-->
 
 <div class="content">
 	<h2>Seat Booking</h2>
@@ -73,99 +143,13 @@
 			</div>
 			
 
-			<script type="text/javascript">
-				var price = 110; //price
-				var invoice;
-				var quan;
-				$(document).ready(function () {
-					var $cart = $('#selected-seats'), //Sitting Area
-						$counter = $('#counter'), //Votes
-						$total = $('#total'); //Total money
-
-					
-                        
-					var sc = $('#seat-map').seatCharts({
-						map: [ //Seating chart
-							'aaaaaaaaaa',
-							'aaaaaaaaaa',
-							'__________',
-							'aaaaaaaa__',
-							'aaaaaaaaaa',
-							'aaaaaaaaaa',
-							'aaaaaaaaaa',
-							'aaaaaaaaaa',
-							'aaaaaaaaaa',
-							'__aaaaaa__'
-						],
-						naming: {
-							top: false,
-							getLabel: function (character, row, column) {
-								return column;
-							}
-						},
-						legend: { //Definition legend
-							node: $('#legend'),
-							items: [
-								['a', 'available', 'Available'],
-								['a', 'unavailable', 'Sold'],
-								['a', 'selected', 'Selected']
-							]
-						},
-						click: function () { //Click event
-							if (this.status() == 'available') { //optional seat
-								$('<li>R-' + (this.settings.row + 1) + '	S-' + this.settings.label + '</li>')
-									.attr('id', 'cart-item-' + this.settings.id)
-									.data('seatId', this.settings.id)
-									.appendTo($cart);
-
-						
-
-								$counter.text(sc.find('selected').length + 1);
-								quan = sc.find('selected').length + 1;
-								sessionStorage.setItem("quan",quan);
-								$total.text(recalculateTotal(sc) + price);
-                                invoice = recalculateTotal(sc) + price;
-								
-							    sessionStorage.setItem("invoice",invoice);
-								
-								return 'selected';
-							} else if (this.status() == 'selected') { //Checked
-								//Update Number
-								$counter.text(sc.find('selected').length - 1);
-								//update totalnum
-								$total.text(recalculateTotal(sc) - price);
-
-								//Delete reservation
-								$('#cart-item-' + this.settings.id).remove();
-								//optional
-								return 'available';
-							} else if (this.status() == 'unavailable') { //sold
-								return 'unavailable';
-							} else {
-								return this.style();
-							}
-						}
-					});
-					//sold seat
-					sc.get(['1_2', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status(
-						'unavailable');
-
-				});
-				//sum total money
-				function recalculateTotal(sc) {
-					var total = 0;
-					sc.find('selected').each(function () {
-						total += price;
-					});
-					return total;
-				}
-			</script>
+			
 		</div>
 	
 
    </div>
 
-    
+
     </div>
   
 	<a id="nextbtn" class="nxtbtn" onclick="book(invoice)">Next</a>
@@ -173,6 +157,8 @@
 
 
 <script src="js2/seat_booking.js"></script>
+
+<script src="js/logout.js"></script>
 </body>
 
 </html>

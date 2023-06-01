@@ -265,12 +265,14 @@ footer a {
 
 .error {
     text-align: center;
-    padding: 5px;
     font-size: 15px;
+	font-weight: bold;
+	padding: 4px;
     color: red;
-    font-weight: 500;
-    background-color: rgb(46, 46, 46);
     letter-spacing: 2px;
+	margin-left: 150px;
+	display: none;
+	border-radius: 10px;
 }
 
 /* .fa-user-circle-o:hover{
@@ -286,4 +288,9 @@ footer a {
 	overflow: hidden;
 	transition: transform 0.6s ease-in-out;
 	z-index: 100;
+}
+
+.regbtn{
+	background-color: tomato;
+    color:#fff;
 }

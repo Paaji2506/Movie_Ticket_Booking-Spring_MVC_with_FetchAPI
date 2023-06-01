@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Signin</title>
+	<title>Reset Password</title>
 	<link rel="stylesheet" type="text/css" href="css/as-alert-message.min.css">
 	<link rel="stylesheet" type="text/css"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -21,17 +21,9 @@
 				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
 						MoviesAdda</a></h1>
-				<!-- if logo is image enable this   
-						<a class="navbar-brand" href="#index.html">
-							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-						</a> -->
-				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<!-- <span class="navbar-toggler-icon"></span> -->
-					<span class="fa icon-expand fa-bars"></span>
-					<span class="fa icon-close fa-times"></span>
-				</button>
+			            
+
+						<div class="error"></div>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
@@ -51,9 +43,10 @@
 						</li>
 					</ul>
 
-					
+				
 
 					</div>
+				
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
 						<!-- <li class="nav-item"> -->
@@ -63,19 +56,18 @@
 				</div>
 			</div>
 		</nav>
+		
 	</header>
 
-	<div class="error"></div>
-    
 
 	<div class="container_signup_signin" id="container_signup_signin">
 		<div class="form-container sign-up-container">
 			<form id="sign-up-form">
 				<h1>Create Account</h1>
 				<div class="social-container">
-					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+					<a href="http://www.facebook.com" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="http://www.google.com" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="http://www.linkedin.com" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span >or use your email for registration</span>
 				<input name="uname" type="text" placeholder="Name" id="uname" required/>
@@ -91,15 +83,15 @@
 			<form id="sign-in-form" style="color: var(--theme-title);">
 				<h1>Sign In</h1>
 				<div class="social-container">
-					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social" style="color: var(--theme-title);"><i
+					<a href="http://www.facebook.com" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
+					<a href="http://www.google.com" class="social" style="color: var(--theme-title);"><i
 							class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
+					<a href="http://www.linkedin.com" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your account</span>
 				<input name="sign-in-email" type="email" placeholder="Email" id="log_email" />
 				<input name="sign-in-passwd" type="password" placeholder="Password" id="log_psw" />
-				<a href="#">Forgot your password?</a>
+				<a href="forgetpswd.html">Forgot your password?</a>
 				<button>Sign In</button>
 			</form>
 		</div>
@@ -120,6 +112,7 @@
 	</div>
 
 
+	
 	
 	
 	

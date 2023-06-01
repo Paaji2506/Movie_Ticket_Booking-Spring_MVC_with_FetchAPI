@@ -6,7 +6,7 @@ let ucpsw = document.getElementById("ucpsw");
 let umob = document.getElementById("umob");
 
 let phPattern = /^[6-9]\d{9}$/;
-let emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+let emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 let passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#_]).{8,}$/;
 // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$ 
 
@@ -16,23 +16,36 @@ signupform.addEventListener("submit",(e)=>{
 	check();
 });
 
+
+function message(msg,suc=false) {
+	document.querySelector(".error").style.display = "block";
+	document.querySelector(".error").innerHTML = msg;
+	if(suc==true){
+	  document.querySelector(".error").style.color = "green";
+	}
+	document.onclick = () =>{
+	  document.querySelector(".error").style.display = "none";
+	}
+  }
+  
+
 function check()
 {
 
     if(!umob.value.match(phPattern)) {
-        alert("Please enter a valid mobile number!...");
+        message("Please enter a valid mobile number!...");
     }
     else if(!uemail.value.match(emailPattern)) {
-        alert("Please enter a valid email address!...");
+        message("Please enter a valid email address!...");
     }
     else if((upsw.value).length<8) {
-        alert("Password should be atleast 8 characters long!...");
+        message("Password should be atleast 8 characters long!...");
     }
     else if(!upsw.value.match(passPattern)) {
-        alert("Password should be strong!...");
+      message("Password should be strong!...");
     }
     else if(!ucpsw.value.match(upsw.value)) {
-       alert("Password and confirm password should match!...");
+        message("Password and confirm password should match!...");
     }
     else{
         addUser();
@@ -68,6 +81,6 @@ async function addUser() {
 				"Content-type": "application/json"
 			},
 		});
-		alert("Registered successfully...");
+	    message("Registered successfully...",true);
 		setTimeout(() => location.href = ("sign_in.html"), 1000);
 	}
